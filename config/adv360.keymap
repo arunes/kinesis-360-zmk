@@ -45,6 +45,44 @@
         };
     };
 
+    macros {
+        vim_quit: vim_quit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_tap>, <&kp COLON &kp Q &kp ENTER>;
+
+            label = "VIM_QUIT";
+        };
+
+        vim_save: vim_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_tap>, <&kp COLON &kp W &kp ENTER>;
+
+            label = "VIM_SAVE";
+        };
+
+        vs_format: vs_format {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp K &kp D>,
+                <&macro_tap>,
+                <&kp K &kp E>,
+                <&macro_release>,
+                <&kp LCTRL>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -74,11 +112,11 @@
         symbol {
             display-name = "Symbol";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans     &trans                &trans                 &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &kp MINUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans    &trans  &trans          &trans  &trans  &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                          &trans    &trans                          &trans  &trans     &kp COMMA             &kp DOT                &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans    &trans  &trans  &trans                  &trans     &trans                &trans                 &trans  &trans
+&trans  &trans     &trans     &trans  &trans      &trans  &trans                                                    &trans  &trans  &trans          &trans                &trans                 &trans            &trans
+&trans  &vim_quit  &vim_save  &trans  &trans      &trans  &trans                                                    &trans  &trans  &kp MINUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans            &trans
+&trans  &trans     &trans     &trans  &vs_format  &trans  &trans          &trans  &trans    &trans  &trans          &trans  &trans  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &trans
+&trans  &trans     &trans     &trans  &trans      &trans                          &trans    &trans                          &trans  &kp LESS_THAN   &kp MINUS             &kp EQUAL              &kp GREATER_THAN  &trans
+&trans  &trans     &trans     &trans  &trans                      &trans  &trans  &trans    &trans  &trans  &trans                  &trans          &trans                &trans                 &trans            &trans
             >;
         };
 
