@@ -89,24 +89,36 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL  &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &to 3                                                                                                                            &mo 2  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W   &kp F     &kp P      &kp B   &none                                                                                                                            &none  &kp J   &kp L   &kp U      &kp Y     &kp SEMI  &kp BSLH
-&kp ESC    &kp A      &kp R   &kp S     &kp T      &kp G   &none                         &kp CAPS    &kp LEFT_ALT                   &none          &none                                    &none  &kp M   &kp N   &kp E      &kp I     &kp O     &kp SQT
-&kp LSHFT  &kp Z      &kp X   &kp C     &kp D      &kp V                                             &none                          &kp PAGE_UP                                                    &kp K   &kp H   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL  &kp GRAVE  &none   &kp LEFT  &kp RIGHT                 &ht_layer 1 BACKSPACE  &kp DELETE  &ht_keypress LEFT_GUI GRAVE    &kp PAGE_DOWN  &kp ENTER  &ht_keypress RIGHT_GUI SPACE                 &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp RCTRL
+&kp EQUAL           &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &to 4                                                                                                                            &mo 3  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB             &kp Q      &kp W   &kp F     &kp P      &kp B   &none                                                                                                                            &none  &kp J   &kp L   &kp U      &kp Y     &kp SEMI  &kp BSLH
+&ht_layer 2 ESCAPE  &kp A      &kp R   &kp S     &kp T      &kp G   &none                         &kp CAPS    &kp LEFT_ALT                   &none          &none                                    &none  &kp M   &kp N   &kp E      &kp I     &kp O     &kp SQT
+&kp LSHFT           &kp Z      &kp X   &kp C     &kp D      &kp V                                             &none                          &kp PAGE_UP                                                    &kp K   &kp H   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL           &kp GRAVE  &none   &kp LEFT  &kp RIGHT                 &ht_layer 1 BACKSPACE  &kp DELETE  &ht_keypress LEFT_GUI GRAVE    &kp PAGE_DOWN  &kp ENTER  &ht_keypress RIGHT_GUI SPACE                 &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp RCTRL
             >;
         };
 
-        nav_sym {
+        nav_macro {
             bindings = <
-&trans  &kp F1     &kp F2     &kp F3         &kp F4         &kp F5                &kp F6                                                    &kp F7  &kp F8                 &kp F9            &kp F10            &kp F11           &kp F12    &kp BACKSPACE
-&trans  &vim_quit  &vim_save  &kp LC(U)      &trans         &kp LEFT_BRACE        &trans                                                    &trans  &kp RIGHT_BRACE        &kp HOME          &kp UP             &kp END           &trans     &trans
-&trans  &trans     &trans     &kp LC(D)      &trans         &kp LEFT_PARENTHESIS  &trans          &trans  &trans    &trans  &trans          &trans  &kp RIGHT_PARENTHESIS  &kp LEFT_ARROW    &kp DOWN_ARROW     &kp RIGHT         &kp MINUS  &trans
-&trans  &trans     &trans     &kp LC(LS(C))  &kp LC(LS(V))  &vs_format                                    &trans    &trans                          &trans                 &kp EQUAL         &kp LESS_THAN      &kp GREATER_THAN  &trans     &trans
-&trans  &trans     &trans     &trans         &trans                                       &trans  &trans  &trans    &trans  &trans  &trans                                 &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans            &trans     &trans
+&trans  &kp F1     &kp F2     &kp F3         &kp F4         &kp F5      &kp F6                                                    &kp F7  &kp F8         &kp F9          &kp F10         &kp F11    &kp F12  &kp BACKSPACE
+&trans  &vim_quit  &vim_save  &kp LC(U)      &trans         &trans      &trans                                                    &trans  &kp PAGE_UP    &kp HOME        &kp UP          &kp END    &trans   &trans
+&trans  &trans     &trans     &kp LC(D)      &trans         &trans      &trans          &trans  &trans    &trans  &trans          &trans  &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans   &trans
+&trans  &trans     &trans     &kp LC(LS(C))  &kp LC(LS(V))  &vs_format                          &trans    &trans                          &trans         &trans          &trans          &trans     &trans   &trans
+&trans  &trans     &trans     &trans         &trans                             &trans  &trans  &trans    &trans  &trans  &trans                         &trans          &trans          &trans     &trans   &trans
             >;
 
-            label = "Nav and Symbols";
+            label = "Nav and Macros";
+        };
+
+        symbol {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans     &trans                &trans                 &trans     &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &kp PLUS   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans    &trans  &trans          &trans  &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans     &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans    &trans                          &trans     &kp LESS_THAN         &kp MINUS              &kp EQUAL  &kp GREATER_THAN  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans    &trans  &trans  &trans                     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans     &trans            &trans
+            >;
+
+            label = "Symbol";
         };
 
         mod {
