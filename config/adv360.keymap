@@ -43,6 +43,15 @@
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
         };
+
+        mm_backspace_space: mm_backspace_space {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BACKSPACE_SPACE";
+            bindings = <&ht_layer 1 BACKSPACE>, <&kp SPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
     };
 
     macros {
@@ -89,11 +98,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL           &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &to 4                                                                                                                            &mo 3  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB             &kp Q      &kp W   &kp F     &kp P      &kp B   &none                                                                                                                            &none  &kp J   &kp L   &kp U      &kp Y     &kp SEMI  &kp BSLH
-&ht_layer 2 ESCAPE  &kp A      &kp R   &kp S     &kp T      &kp G   &none                         &kp CAPS    &kp LEFT_ALT                   &none          &none                                    &none  &kp M   &kp N   &kp E      &kp I     &kp O     &kp SQT
-&kp LSHFT           &kp Z      &kp X   &kp C     &kp D      &kp V                                             &none                          &kp PAGE_UP                                                    &kp K   &kp H   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL           &kp GRAVE  &none   &kp LEFT  &kp RIGHT                 &ht_layer 1 BACKSPACE  &kp DELETE  &ht_keypress LEFT_GUI GRAVE    &kp PAGE_DOWN  &kp ENTER  &ht_keypress RIGHT_GUI SPACE                 &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp RCTRL
+&kp EQUAL           &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &to 4                                                                                                                          &mo 3  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB             &kp Q      &kp W   &kp F     &kp P      &kp B   &none                                                                                                                          &none  &kp J   &kp L   &kp U      &kp Y     &kp SEMI  &kp BSLH
+&ht_layer 2 ESCAPE  &kp A      &kp R   &kp S     &kp T      &kp G   &none                       &kp CAPS    &kp LEFT_ALT                   &none          &none                                    &none  &kp M   &kp N   &kp E      &kp I     &kp O     &kp SQT
+&kp LSHFT           &kp Z      &kp X   &kp C     &kp D      &kp V                                           &none                          &kp PAGE_UP                                                    &kp K   &kp H   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL           &kp GRAVE  &none   &kp LEFT  &kp RIGHT                 &mm_backspace_space  &kp DELETE  &ht_keypress LEFT_GUI GRAVE    &kp PAGE_DOWN  &kp ENTER  &ht_keypress RIGHT_GUI SPACE                 &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp RCTRL
             >;
         };
 
