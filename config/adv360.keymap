@@ -51,6 +51,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
+            keep-mods = <(MOD_RGUI)>;
         };
     };
 
